@@ -1,18 +1,9 @@
 from flask import Flask, request, jsonify, render_template
 import json
-from flask_cors import CORS
+from graph import graph # importdistance data from different file
 
 app = Flask(__name__)
-CORS(app)
 
-graph = {
-    'Delhi': {'Agra': 200, 'Jaipur': 260},
-    'Agra': {'Delhi': 200, 'Kanpur': 270},
-    'Jaipur': {'Delhi': 260, 'Udaipur': 400},
-    'Kanpur': {'Agra': 270, 'Lucknow': 80},
-    'Lucknow': {'Kanpur': 80, 'Varanasi': 300},
-    # Add more cities and distances here...
-}
 
 
 def dijkstra(graph, start, end):
@@ -51,10 +42,10 @@ def find_route():
     
     formatted_path = ' -> '.join(path)
     
-    return jsonify({'distance': distance, 'path': formatted_path})
+
+    d = str(distance)+" Km" + "\n\n" 
+    return jsonify({'distance': d , 'path': formatted_path})
+
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-

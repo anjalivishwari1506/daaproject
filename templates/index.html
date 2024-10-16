@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shortest Path Finder</title>
     <style>
-        /* General body styling */
         body,
         html {
             margin: 0;
@@ -19,7 +18,6 @@
             min-height: 100vh;
         }
 
-        /* Heading styling */
         h1 {
             color: #333;
             font-size: 35px;
@@ -28,7 +26,6 @@
             text-align: center;
         }
 
-        /* Container styling */
         .container {
             background: #ffffff;
             padding: 30px;
@@ -39,7 +36,6 @@
             text-align: center;
         }
 
-        /* Form styling */
         form {
             display: flex;
             flex-direction: column;
@@ -50,7 +46,7 @@
             font-size: 14px;
             color: #1f1d1d;
             text-align: left;
-            font-family:cursive;
+            font-family: cursive;
             font-weight: bold;
         }
 
@@ -66,7 +62,6 @@
             outline: none;
         }
 
-        /* Button styling */
         button {
             background: #000000;
             color: #fff;
@@ -84,7 +79,6 @@
             color: black;
         }
 
-        /* Result styling */
         #result {
             margin-top: 20px;
             font-size: 16px;
@@ -96,14 +90,13 @@
             text-align: left;
         }
 
-        /* Responsive styling */
         @media (max-width: 480px) {
             .container {
                 padding: 20px;
                 width: 90%;
             }
 
-            
+
         }
     </style>
 
@@ -139,6 +132,7 @@
             const result = await response.json();
             document.getElementById('result').innerText = `Shortest distance: ${result.distance}, Path: ${result.path}`;
         });
+
 
     </script>
 </body>
